@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/db.dir/db.cpp.o -o db  ../src/libdb.a 
