@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/db.dir/db.cpp.o -o db  ../src/libdb.a 
+/usr/bin/c++ CMakeFiles/db.dir/db.cpp.o -o db  ../src/libdb.a ../vcpkg_installed/arm64-linux/debug/lib/libedit.a -lncurses 

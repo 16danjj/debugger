@@ -93,6 +93,8 @@ db_EXTERNAL_OBJECTS =
 tools/db: tools/CMakeFiles/db.dir/db.cpp.o
 tools/db: tools/CMakeFiles/db.dir/build.make
 tools/db: src/libdb.a
+tools/db: vcpkg_installed/arm64-linux/debug/lib/libedit.a
+tools/db: /usr/lib/aarch64-linux-gnu/libncurses.so
 tools/db: tools/CMakeFiles/db.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cs300-user/debugger/db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable db"
 	cd /home/cs300-user/debugger/db/build/tools && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/db.dir/link.txt --verbose=$(VERBOSE)

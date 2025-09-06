@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "6.10.14-linuxkit")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "aarch64")
 
-
+include("/home/cs300-user/debugger/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 set(CMAKE_SYSTEM "Linux-6.10.14-linuxkit")
 set(CMAKE_SYSTEM_NAME "Linux")

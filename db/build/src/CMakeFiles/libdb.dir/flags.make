@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cs300-user/debugger/db/src/include -I/home/cs300-user/debugger/db/include
+CXX_INCLUDES = -I/home/cs300-user/debugger/db/include -I/home/cs300-user/debugger/db/src/include
 
 CXX_FLAGS = 
 
