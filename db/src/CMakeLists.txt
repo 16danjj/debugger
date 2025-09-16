@@ -1,4 +1,4 @@
-add_library(libdb libdb.cpp)
+add_library(libdb process.cpp)
 add_library(db::libdb ALIAS libdb)
 
 set_target_properties(libdb PROPERTIES OUTPUT_NAME db)
