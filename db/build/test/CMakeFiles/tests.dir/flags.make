@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cs300-user/debugger/db/include -isystem /home/cs300-user/debugger/db/build/vcpkg_installed/arm64-linux/include
+CXX_INCLUDES = -I/home/cs300-user/debugger/db/include
 
 CXX_FLAGS = 
 

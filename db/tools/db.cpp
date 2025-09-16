@@ -7,10 +7,12 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 namespace {
 
-    std::vector<str::string> split(std::string_view str, char delimiter) {
+    std::vector<std::string> split(std::string_view str, char delimiter) {
         std::vector<std::string> out{};
         std::stringstream ss {std::string{str}};
         std::string item;
@@ -87,6 +89,7 @@ namespace {
                     std::perror("Tracing failed");
                     return -1;
                 }
+
                 if (execlp(program_path, program_path, nullptr) < 0) {
                     std::perror("Exec failed");
                     return -1;
@@ -113,7 +116,7 @@ int main(int argc, const char** argv) {
     }
 
     char* line = nullptr;
-    while ((line = readline("sdb> ")) != nullptr) {
+    while ((line = readline("db> ")) != nullptr) {
         std::string line_str;
 
         if (line == std::string_view("")) {
@@ -121,15 +124,15 @@ int main(int argc, const char** argv) {
             if (history_length > 0) {
                 line_str = history_list()[history_length - 1]->line;
             }
-            else {
-                line_str = line;
-                add_history(line);
-                free(line);
-            }
+        }
+        else {
+            line_str = line;
+            add_history(line);
+            free(line);
+        }
 
-            if (!line_str.empty()) {
-                handle_command(pid, line_str);
-            }
-         }
+        if (!line_str.empty()) {
+            handle_command(pid, line_str);
+        }
     }
 }

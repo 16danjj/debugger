@@ -93,8 +93,8 @@ tests_EXTERNAL_OBJECTS =
 test/tests: test/CMakeFiles/tests.dir/tests.cpp.o
 test/tests: test/CMakeFiles/tests.dir/build.make
 test/tests: src/libdb.a
-test/tests: vcpkg_installed/arm64-linux/debug/lib/manual-link/libCatch2Maind.a
-test/tests: vcpkg_installed/arm64-linux/debug/lib/libCatch2d.a
+test/tests: /usr/lib/libCatch2Main.a
+test/tests: /usr/lib/libCatch2.a
 test/tests: test/CMakeFiles/tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cs300-user/debugger/db/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tests"
 	cd /home/cs300-user/debugger/db/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
