@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <memory>
 #include <sys/types.h>
+#include <cstdint>
 
 namespace db {
 
@@ -14,6 +15,13 @@ namespace db {
         terminated
     };
 
+    struct stop_reason {
+        stop_reason(int wait_status);
+
+        process_state reason;
+        std::uint8_t info;
+    };
+
     class process {
         public:
             ~process();
@@ -21,7 +29,7 @@ namespace db {
             static std::unique_ptr<process> attach(pid_t pid);
 
             void resume();
-            /*?*/ wait_on_signal();
+            stop_reason wait_on_signal();
             pid_t pid() const { return pid_; }
 
             process() = delete;
